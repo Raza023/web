@@ -1,0 +1,258 @@
+<!-- <link rel="stylesheet" href="app.min.css"> -->
+<!-- <script src="zepto.js"></script> -->
+<!-- <script src="app.min.js"></script> -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Email client App</title>
+
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="kik-transparent-statusbar" content="true">
+		<!-- <link rel="stylesheet" href="app.min.css"> -->
+		<link rel="stylesheet" href="src/stylesheets/base.css">
+		<link rel="stylesheet" href="src/stylesheets/app.css">
+		<style>
+			#ctr{
+				text-align: center;
+				font-weight: bold;
+			}
+			@-webkit-keyframes pulse {
+				0% {
+					background-color: #CCC;
+				}
+				25% {
+					background-color: #EEE;
+				}
+				50% {
+					background-color: #CCC;
+				}
+				75% {
+					background-color: #EEE;
+				}
+				100% {
+					background-color: #CCC;
+				}
+			}
+		</style>
+	</head>
+
+
+	<body>
+		<div class="app-page" data-page="home">
+			<div class="app-topbar blue">
+				<div class="app-title"><b>Email Client</b></div>
+			</div>
+
+			<div class="app-content">
+				<p class="app-section" id="ctr">
+					Click below to send an email!
+				</p>
+
+				<div class="app-section" id="contactList">Contact List: 
+					<!-- <div class="app-button" data-target="sendemail"></div> -->
+				</div>
+
+				<div class="app-section">
+					<div class="app-button" id="newemail">Send to new user</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="app-page" data-page="sendemail">
+			<div class="app-topbar blue">
+				<div class="app-title">Send an email</div>
+				<div class="right app-button" data-target="home">Done</div>
+			</div>
+
+			<div class="app-content">
+				<!-- <input class="app-input" type="search" placeholder="Search.."> -->
+				<div class="app-section" id="showMsg"></div>
+
+				<div class="app-section">
+					From: <input class="app-input" id="sender" type="email" placeholder="Sender email address">
+				</div>
+
+				<div class="app-section">
+					To: <input class="app-input" id="reciever" type="email" placeholder="Reciever email address">
+				</div>
+
+				<form class="app-section">
+					<input class="app-input" name="subject" id="subject" placeholder="Subject">
+					<textarea class="app-input" name="message" id="message" placeholder="Message"></textarea>
+					<div class="app-button green app-submit" id="sendbtn">Send</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- <script src="zepto.js"></script> -->
+		<!-- <script src="app.min.js"></script> -->
+
+		<!-- Not necessary, but will make our lives a little easier -->
+		<script src="js/zepto.min.js"          ></script>
+
+		<script src="src/lib/swapper.js"    ></script>
+		<script src="src/lib/clickable.js"  ></script>
+		<script src="src/lib/scrollable.js" ></script>
+		<script src="src/app.js"            ></script>
+		<script src="src/utils.js"          ></script>
+		<script src="src/events.js"         ></script>
+		<script src="src/metrics.js"        ></script>
+		<script src="src/dialog.js"         ></script>
+		<script src="src/form.js"           ></script>
+		<script src="src/scroll.js"         ></script>
+		<script src="src/scroll-fix.js"     ></script>
+		<script src="src/pages.js"          ></script>
+		<script src="src/stack.js"          ></script>
+		<script src="src/transitions.js"    ></script>
+		<script src="src/navigation.js"     ></script>
+
+		<script>
+			function isEmail(email)
+			{
+				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				return regex.test(email);
+			}
+			App.controller('home', function (page) {
+				// alert("home");
+				if(typeof localStorage !== "undefined")
+				{
+					$(page).find("#newemail").clickable().on('click',function(){
+						if(localStorage.getItem('recipient')!==null)
+						{
+							localStorage.removeItem('recipient');
+						}
+						App.load('sendemail');
+					});
+					if(localStorage.getItem("recieverEmail") !== null)
+					{
+						var list = JSON.parse(localStorage.getItem("recieverEmail"));
+						$.each(list,function(index,value){
+							$(page).find("#contactList").append('<div class="app-button redirect">'+value+'</div>');
+						});
+						// for(let i=0;i<list.length;i++)   //same as above.
+						// {
+						// 	$(page).find("#contactList").append('<div class="app-button" data-target="sendemail">'+list[i]+'</div>');
+						// }
+						$(page).find("#contactList").show();
+
+						$(page).find(".redirect").clickable().on('click',function(){
+							localStorage.setItem('recipient',$(this).html());
+							App.load('sendemail');
+						});
+					}
+					else
+					{
+						$(page).find("#contactList").hide();
+					}
+				}
+				else
+				{
+					//alert("local storage is not supported");
+				}
+			});
+
+			App.controller('sendemail', function (page) {
+				// alert("sendemail");
+				$(page).find("#showMsg").hide();
+
+				if(typeof localStorage !=="undefined")
+				{
+					if(localStorage.getItem("senderemail")!==null)
+					{
+						$(page).find("#sender").val(localStorage.getItem("senderemail"));
+					}
+					if(localStorage.getItem("recipient")!==null)
+					{
+						$(page).find("#reciever").val(localStorage.getItem("recipient"));
+					}
+				}
+				else
+				{
+					//alert("Local storage is not supported.");
+				}
+
+				$(page).find("#sendbtn").on('click',function(){
+					//e.preventDefault();
+					if(typeof localStorage !=="undefined")
+					{
+						if($("#sender").val()=="" || $("#reciever").val()=="" || $("#subject").val()=="" || $("#message").val()=="")
+						{
+							$(page).find("#showMsg").html("Please enter all values to send an email.");
+							$(page).find("#showMsg").show();
+						}
+						else
+						{
+							if(!isEmail($("#sender").val()) || !isEmail($("#reciever").val()))
+							{
+								$(page).find("#showMsg").html("Please enter correct email address.");
+								$(page).find("#showMsg").show();
+							}
+							else
+							{
+								//Ajax code here.
+								$.ajax({
+									type: "get",
+									url: "http://localhost/php/10)apps/response/index.php?callback=response",
+									data: {from: $("#sender").val(),to: $("#reciever").val(),subject: $("#subject").val(),message: $("#message").val()},
+									dataType: "jsonp",
+									success: function (response) {
+										if(response.success)
+										{
+											$(page).find("#showMsg").html("Message has been sent.");
+											$(page).find("#showMsg").show();
+										}
+										else
+										{
+											$(page).find("#showMsg").html("Message could not be sent. Please try again!");
+											$(page).find("#showMsg").show();
+										}
+									},
+									error: function(xhr,type)
+									{
+										$(page).find("#showMsg").html("Message could not be sent. Please try again!");
+										$(page).find("#showMsg").show();
+									}
+								});
+								
+
+								localStorage.setItem("senderemail",$(page).find("#sender").val());
+
+								if($("#reciever").val()!="")
+								{
+									var list = new Array();
+									if(localStorage.getItem("recieverEmail")!==null)          
+									{
+										list = JSON.parse(localStorage.getItem("recieverEmail"));    //getting localstorage array.
+									}
+
+									if($.inArray($("#reciever").val(),list)==-1)          //list ma pahla sa nahi ha
+									{
+										list.push($("#reciever").val());
+										list.sort();
+										localStorage.setItem("recieverEmail",JSON.stringify(list));
+										console.log(list);
+									}
+								}
+							}
+						}
+					}
+					else
+					{
+						//alert("Local storage is not supported.");
+					}
+					$(page).find("#showMsg").show();
+				});
+			});
+
+			try {
+				App.restore();
+			} catch (err) {
+				App.load('home');
+			}
+		</script>
+
+		<!-- some kik goodness for demos -->
+		<script src="js/kik.js"></script>
+	</body>
+</html>

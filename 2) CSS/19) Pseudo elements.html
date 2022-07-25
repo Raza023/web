@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Pseudo Elements</title>
+		<!-- :: represents the psedo elements.-->
+		<!-- used to style specific parts of elements.-->
+		<!-- h1::first-letter; (example)-->
+        <style type="text/css">
+			p::first-letter{
+				font-size:40px;
+				color:Green;
+			}
+			p::first-line{
+				color:blue;
+			}
+			
+			/*
+			li::before{
+				content:"✔";
+			}
+			*/
+			
+			#list1 li::before{
+				content:"✔";
+			}
+			#list1 li:nth-child(2)::after{
+				content:"👈";
+			}
+			
+			#list2 li::marker{
+				color:red;
+			}
+			p::selection{
+				background-color:black;
+				color:white;
+			}
+			
+        </style>
+    </head>
+    <body>
+		<p>Select this paragraph to see the magic. Or resize the width. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos praesentium iure voluptas cumque quia ut eaque, ipsam sint perspiciatis officia, tenetur doloribus aliquid non, quasi eveniet. Veritatis, necessitatibus explicabo? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam ab fugiat obcaecati provident doloremque aut voluptate nesciunt. Ea suscipit amet sed aut esse ut praesentium quos at? Deleniti, aperiam repellendus.</p>
+		
+		<br/>
+		
+		<ul id="list1">
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ul>
+		
+		<br/>
+		
+		<ul id="list2">
+			<li>JAVA</li>
+			<li>Python</li>
+			<li>C#</li>
+			<li>C++</li>
+		</ul>
+    </body>
+</html>

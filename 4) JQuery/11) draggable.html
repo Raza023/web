@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>draggable</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <style>
+        /* h1{
+            margin: 100px;
+        } */
+    </style>
+</head>
+<body>
+    <h1 id="hor">Drag me horizontally.</h1>
+    <h1 id="ver">Drag me vertically.</h1>
+
+    <div style="width: 500px; height: 1500px; background-color:yellow;">
+        <span>Drag me</span>
+    </div>
+    
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hor").draggable({axis:"x"});
+            $("#ver").draggable({axis:"y"});
+            $("span").draggable({containment:"parent"});
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>LOOPS</title>
+	</head>
+	<body>
+		<h1>LOOPS</h1>
+		<hr/>
+		<h2>By for loop:</h2>
+		<div id="dtag"></div>
+		<hr/>
+		<h2>By while loop:</h2>
+		<div id="dtag2"></div>
+		<hr/>
+		<h2>By for in loop:</h2>
+		<div id="dtag3"></div>
+		<hr/>
+		<script>
+			let arr = new Array();
+			arr[0]="1";
+			arr[1]="2";
+			arr[2]="3";
+			arr[3]="4";
+			arr[4]="5";
+			
+			let str = "";
+			for(let i = 0; i < arr.length; i++)
+			{
+				console.log(arr[i]);
+				let val = arr[i];
+				str = str+"<p>"+val+"</p>";
+			}
+			document.getElementById("dtag").innerHTML = str;
+			
+			str = "";
+			let i=0;
+			while(i<arr.length)
+			{
+				console.log(arr[i]);
+				let val = arr[i];
+				str = str+"<p>"+val+"</p>";
+				i++;
+			}
+			document.getElementById("dtag2").innerHTML = str;
+			
+			
+			let person = {             //object literal
+				pName:"Hassan Raza",
+				pAge:21
+			};
+			str="";
+			
+			for (x in person)
+			{
+				console.log(x);
+				str = str+"<p>Property: "+x+"</p>";
+				console.log(person[x]);
+				str = str+"<p>Value: "+person[x]+"</p>";
+			}
+			document.getElementById("dtag3").innerHTML = str;
+		</script>
+	</body>
+</html>

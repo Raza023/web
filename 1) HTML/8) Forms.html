@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body bgcolor="lime">
+        <h1>Form 1</h1>
+        <form action="https://www.google.com/" method="get">
+            <p>Enter your email: <input type="email" placeholder="your email" required></p>
+            <p>Username: <input type="text" value="Your username"></p> <!-- value="Your username" it will already be written -->
+            <p>Name: <input type="text" placeholder="Your name"></p>
+            <p>Password: <input type="password" placeholder="Your password"></p>
+            <p>Enter your age:<input type="number" placeholder="age"></p> 
+            <p>DOB:<input type="date"></p>
+            <p>Man: <input type="radio" name="sex" value="man"></p>
+            <p>Woman: <input type="radio" name="sex" value="woman"></p>
+            <p>Your province:
+                <select>
+                    <option>Sindh</option>
+                    <option selected>Punjab</option>
+                    <option>Blochistan</option>
+                    <option>Sarhad</option>
+                    <option>NWFP</option>
+                </select>
+            </p>
+            <p>Stay logged in: <input type="checkbox" checked></p>
+            <p><input type="submit" value="Log in!" onClick="window.alert('yes')"></p>
+        </form>
+
+        <h1>Form 2</h1>     
+        <form action="https://www.google.com/" method="get">
+
+            <div>
+                <label for="fname">first name:</label>
+                <input type="text" id="fname" name="fname" placeholder="First name" required>
+            </div>
+    
+            <br>
+    
+            <div>
+                <label for="lname">last name:</label>
+                <input type="text" id="lname" name="lname" placeholder="Last name" required>
+            </div>
+    
+            <br>
+    
+            <div>
+                <label for="pass">password:</label>
+                <input type="password" id="pass" name="pass" minlength="5" maxlength="12" placeholder="password" required>
+            </div>
+    
+            <br>
+    
+            <div>
+                <label for="email">email:</label>
+                <input type="email" id="email" name="email" placeholder="username@gmail.com" required>
+            </div>
+    
+            <br>
+    
+            <div>
+                <label for="phone">phone #:</label>
+                <input type="tel" id="phone" name="phone" placeholder="(123)-456-7890" required>
+            </div>
+    
+            <br>
+    
+            <div>
+                <label for="bdate">birthdate:</label>
+                <input type="date" id="bdate" name="bdate" required>
+            </div>
+            
+            <br>
+    
+            <div>
+                <label for="quantity">quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="0" max="99" value="1" required>
+            </div>
+            
+            <br>
+    
+            <div>
+                <label for="title">title:</label>
+    
+                <label for="Mr.">Mr.</label>
+                <input type="radio" id="Mr." name="title" value="Mr." checked>
+    
+                <label for="Mrs.">Mrs.</label>
+                <input type="radio" id="Mrs." name="title" value="Mrs.">
+    
+                <label for="PhD.">PhD.</label>
+                <input type="radio" id="PhD." name="title" value="PhD.">
+            </div>
+            
+            <br>
+    
+            <div>
+                <label for="payment">payment:</label>
+                <select id="payment" name="payment">
+                    <option value="visa">visa</option>
+                    <option value="mastercard" selected>mastercard</option>
+                    <option value="giftcard">giftcard</option>
+                </select>
+            </div>
+            
+            <br>
+    
+            <div>
+                <label for="subscribe">subscribe:</label>
+                <input type="checkbox" id="subscribe" name="subscribe" min="0" max="99" value="1" checked>
+            </div>
+            
+            <br>
+    
+            <div>
+                <input type="reset">
+                <input type="submit">
+            </div>
+    
+        </form>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selectors</title>
+    <style>
+        /* element selector */
+        h1{
+            color:blue;
+        }
+
+        /* id selector */
+        #this{
+            text-align: justify;
+        }
+
+        /* class selector */
+        .justify{
+            text-align: justify;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        .make-big{
+            font-size: 150%;
+        }
+
+        /* decendent selectors */
+        div p{
+            background-color: yellow;
+        }
+
+        /* sibbling selectors (with in the same scope)*/         
+        h3~p{
+            text-decoration: underline;
+        }
+
+        /* p right after h3 */
+        h3+p{
+            font-weight: bold;
+        }
+
+        /* having that attribute */
+        a[target]{
+            color: red;
+        }
+
+        /* having this vale with that attribute */
+        a[href="https://www.udemy.com/"]{
+            background-color: aqua;
+        }
+
+        /* have that value somewhere */
+        a[href*="facebook"]{
+            background-color: cadetblue;
+        }
+
+        /* begins with */
+        a[href^="https"]{
+            text-decoration: underline;
+        }
+
+        /* ends with */
+        a[href$='com/']{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* attribute that has space and that value */
+        p[class~='bold']{
+            color:red;
+        }
+
+        /* having value separated by - (note)=>value shold be at the start like if [class|=make] then class="make-big justify" */
+        p[class|=make]{
+            color: red;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="this">This is a heading.</h1>
+        <h3>This is heading 3.</h3>
+        <p class="justify bold">This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.</p>
+        <p class="make-big justify">This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.</p>
+
+        <a href="https://www.google.com/" target="_blank">Google</a>
+    </div>
+    <div>
+        <p>This is some text. This is some text. This is some more text. This is some text. This is some text. This is some more text. This is some text. This is some text. This is some more text. This is some text. This is some text. This is some more text.</p>
+    </div>
+    <p>This is a paragraph. I am outside the div.</p>
+    <a href="https://www.udemy.com/">Udemy</a>
+    <br>
+    <a href="https://www.linkedin.com/">Linkedin</a>
+    <br>
+    <a href="https://www.facebook.com/">Facebook</a>
+</body>
+</html>

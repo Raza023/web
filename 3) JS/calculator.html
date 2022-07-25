@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    .btn{
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        padding: 5px;
+        background-color: yellow;
+    }
+    .btn:hover{
+        background-color: orange;
+    }
+</style>
+<body style="background-color: lightcoral;">
+    <div style="font-size: xx-large;align-content: center;border: 2px solid black;width:170px;padding: 10px;margin-top: 50px;margin-bottom: 10px;margin-left: auto;margin-right: auto;border-radius: 10px;background-color: olivedrab;">
+        Calculator
+    </div>
+    <div style="border: 2px solid black;width:175px;padding: 10px;margin: 10px auto;border-radius: 10px;background-color: olivedrab;">
+        <div id="subScreen" style="width:160px;height: 20px;border: 2px solid black;margin: 2px;background-color: #fff;"></div>
+        <div id="mainScreen" style="width:160px;height: 20px;border: 2px solid black;margin: 2px;background-color: #fff;"></div>
+        <!-- <div style="margin: 2px;"><input type="textbox" style="width:160px;border: 2px solid black;"></div>
+        <div style="margin: 2px;" ><input type="textbox" style="width:160px;border: 2px solid black;"></div> -->
+        <div>
+            <button onclick="work()" class="btn" id='x'>x</button>
+            <!-- <button onclick="CE()" class="btn" id="x">x</button> -->
+            <button onclick="CE()" class="btn" id="C">CE</button>
+            <button onclick="C()" class="btn" id="C">C</button>
+            <button onclick="divide()" class="btn" id="/">/</button>
+        </div>
+        <div>
+            <button onclick="seven()" class="btn" id="7">7</button>
+            <button onclick="eight()" class="btn" id="8">8</button>
+            <button onclick="nine()" class="btn" id="9">9</button>
+            <button onclick="multiply()" class="btn" id="*">*</button>
+        </div>
+        <div>
+            <button onclick="four()" class="btn" id="4">4</button>
+            <button onclick="five()" class="btn" id="5">5</button>
+            <button onclick="six()" class="btn" id="6">6</button>
+            <button onclick="minus()" class="btn" id="-">-</button>
+        </div>
+        <div>
+            <button onclick="one(event)" class="btn" id="1">1</button>
+            <button onclick="two()" class="btn" id="2">2</button>
+            <button onclick="three()" class="btn" id="3">3</button>
+            <button onclick="plus()" class="btn" id="+">+</button>
+        </div>
+        <div>
+            <button onclick="negateValue()" class="btn" id="+">+/-</button>
+            <button onclick="zero()" class="btn" id="0">0</button>
+            <button onclick="dot()" class="btn" id=".">.</button>
+            <button onclick="equal()" class="btn" id="=">=</button>
+        </div>
+    </div>
+    <script>
+        let startFlag = true;
+        let equalFlag = false;
+        let mainStrPrev = false;// If True then perform action Else Append
+        let dotFlag=false;
+        let prevOperation;
+        function setCharAt(str,index,chr) {
+            if(index > str.length-1) return str;
+            return str.substring(0,index) + chr + str.substring(index+1);
+        }
+        function isNum(val){
+            return !isNaN(val)
+        }
+        function isOperation(val){
+            let operations = ['+','-','*','/'];
+            if (operations.includes(val))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function zeroCheck()
+        {
+            if(startFlag)
+            {
+                document.getElementById("mainScreen").innerText='0';
+            }
+        }
+        function performOperation(op1,op2,op)
+        {
+            console.log("performOperation Called")
+            console.log("op1,op2,op: ",op1,op2,op)
+            op1 = parseFloat(op1);
+            op2 = parseFloat(op2);
+            let result=0;
+            if(op=='+')
+            {
+                result = op1 + op2;
+            }
+            else if(op=='-')
+            {
+                result = op1 - op2;
+            }
+            else if(op=='*')
+            {
+                result = op1 * op2;
+            }
+            if(op=='/')
+            {
+                result = op1 / op2;
+            }
+            console.log("Result: ",result);
+            return result
+        }
+        function readData(btn)
+        {
+            const subScreen = document.getElementById("subScreen");
+            const mainScreen = document.getElementById("mainScreen");
+            if(subScreen.innerText == '')
+            {
+
+                console.log('***subScreen is Empty***');
+                
+                if(isNum(btn))
+                {
+                    if(startFlag==true)   // mainScreen.innerText == "0"
+                    {
+                        if(btn!='0')
+                        {
+                            mainScreen.innerText = btn;
+                            startFlag = false;
+                        }
+                    }
+                    else
+                    {
+                        mainScreen.innerText = mainScreen.innerText + btn;
+                        startFlag = false;
+                    }
+                }
+                else if(btn == "." && dotFlag == false)
+                {
+                    console.log(". in Empty");
+                    mainScreen.innerText = mainScreen.innerText + ".";
+                    dotFlag = true;
+                    startFlag=false;
+                }
+                else if(isOperation(btn))
+                {
+                    subScreen.innerText = mainScreen.innerText + btn;
+                    prevOperation = btn;
+                    mainStrPrev = true;
+                    dotFlag = false;
+                }
+                // else
+                // {
+                //     subScreen.innerText = mainScreen.innerText + btn;
+                // }
+            }    
+            else
+            {
+                console.log('***subScreen is NOT Empty***');
+                let subScreenLast = subScreen.innerText[subScreen.innerText.length-1];
+                if(btn == '=')
+                {
+                    if(equalFlag)
+                    {
+                        if(subScreenLast == '=')
+                        {
+                            console.log("subScreen: ",subScreen.innerText);
+                            console.log("MainScreen: ",mainScreen.innerText);
+                            let op2;
+                            if (subScreen.innerText[0]=='-' && prevOperation == '-')
+                            {
+                                // if(prevOperation != '-')
+                                // {
+                                //     op2 = subScreen.innerText.slice(0,subScreen.innerText.length-1).split(prevOperation)[1];    
+                                // }
+                                // else
+                                // {
+                                //     op2 = subScreen.innerText.slice(0,subScreen.innerText.length-1).split(prevOperation)[1];    
+                                // }
+                                console.log("for minus");
+                                console.log("slice: ",subScreen.innerText.slice(0,subScreen.innerText.length-1))
+                                console.log("op2: ",subScreen.innerText.slice(0,subScreen.innerText.length-1).split(prevOperation)[1]);
+                                op2 = subScreen.innerText.slice(0,subScreen.innerText.length-1).split(prevOperation)[2];    
+                            }
+                            else
+                            {
+                                console.log("for NOT minus");
+                                console.log("slice: ",subScreen.innerText.slice(0,subScreen.innerText.length-1))
+                                console.log("op2: ",subScreen.innerText.slice(0,subScreen.innerText.length-1).split(prevOperation)[1]);
+                                op2 = subScreen.innerText.slice(0,subScreen.innerText.length-1).split(prevOperation)[1];
+                            }
+                            let op1 = mainScreen.innerText;
+                            console.log("op1: ",op1," ; op2: ",op2);
+                            let result = performOperation(op1,op2,prevOperation);
+                            result = String(result);
+                            mainScreen.innerText = result;
+                            subScreen.innerText = op1+ prevOperation + op2 + btn;
+                        }
+                        else
+                        {
+                            
+                            let op1 = subScreen.innerText.slice(0,subScreen.innerText.length-1);
+                            let op2 = mainScreen.innerText;
+                            let result = performOperation(op1,op2,subScreenLast);
+                            result = String(result);
+                            mainScreen.innerText = result;
+                            subScreen.innerText = op1+ subScreenLast + op2 + btn;
+                        }
+                    }
+                    else
+                    {
+                        console.log("equalFlag: ",equalFlag);
+                        console.log("dotFlag: ",dotFlag);
+                        let op1 = subScreen.innerText.slice(0,subScreen.innerText.length-1);
+                        let op2 = mainScreen.innerText;
+                        let result = performOperation(op1,op2,subScreenLast);
+                        result = String(result);
+                        mainScreen.innerText = result;
+                        subScreen.innerText = op1+ subScreenLast + op2 + btn;
+                    }
+                    mainStrPrev = true;
+                    equalFlag = true;
+                    dotFlag = false;
+                }
+                else if(btn == "." && dotFlag == false)
+                {
+                    console.log("mainStrPrev: ",mainStrPrev)
+                    if(mainStrPrev == true)
+                    {
+                        mainScreen.innerText = "0."
+                        mainStrPrev = false;
+                    }
+                    else
+                    {
+                        mainScreen.innerText = mainScreen.innerText + "."    
+                    }
+                    dotFlag = true;
+                }
+                else if(isOperation(btn))
+                {
+                    console.log("subScreenLast: ",subScreenLast);
+                    if (isOperation(subScreenLast))
+                    {
+                        if(mainStrPrev == false)
+                        {
+                            let op1 = subScreen.innerText.slice(0,subScreen.innerText.length-1);
+                            let op2 = mainScreen.innerText;
+                            let result = performOperation(op1,op2,subScreenLast);
+                            result = String(result);
+                            subScreen.innerText = result + btn;
+                            mainScreen.innerText = result;
+                            mainStrPrev = true;
+                            prevOperation = btn;
+                        }
+                        else if(mainStrPrev == true && btn!=prevOperation)
+                        {
+                            subScreen.innerText = setCharAt(subScreen.innerText,subScreen.innerText.length-1,btn);
+                            prevOperation = btn;
+                            mainStrPrev = true;
+                        }
+                    }
+                    else if(subScreenLast == "=")
+                    {
+                        subScreen.innerText = mainScreen.innerText + btn;
+                        prevOperation = btn;
+                        mainStrPrev = true;
+                    }
+                    dotFlag = false;
+                }
+                else if(isNum(btn))
+                {
+                    if(subScreenLast == '=')
+                    {
+                        // subScreen.style = "width:160px;height: 20px;border: 2px solid black;margin: 2px;background-color: #fff;color:white";
+                        // subScreen.innerText = "";
+                        if(mainStrPrev == true)
+                        {
+                            document.getElementById("mainScreen").innerText = btn;
+                            mainStrPrev = false;
+                        }
+                        else if (mainStrPrev == false)
+                        {
+                            document.getElementById("mainScreen").innerText = document.getElementById("mainScreen").innerText + btn;
+                            mainStrPrev = false;
+                        }
+                    }
+                    else
+                    {
+                        if(mainStrPrev == true)
+                        {
+                            document.getElementById("mainScreen").innerText = btn;
+                            mainStrPrev = false;
+                        }
+                        else if (mainStrPrev == false)
+                        {
+                            document.getElementById("mainScreen").innerText = document.getElementById("mainScreen").innerText + btn;
+                            mainStrPrev = false;
+                        }
+                    }
+                }
+            }  
+        }
+        function zero()
+        {
+            console.log("Zero Called");
+            readData('0');
+        }
+        function one(event)
+        {
+            console.log("One Called");
+            readData('1');
+        }
+        function two(event)
+        { 
+            console.log("Two Called");
+            readData('2');
+        }
+        function three(event)
+        {
+            console.log("Three Called");
+            readData('3');
+        }
+        function four(event)
+        {
+            console.log("Four Called");
+            readData('4');
+        }
+        function five(event)
+        {
+            console.log("Five Called");
+            readData('5');
+        }
+        function six(event)
+        {
+            console.log("Six Called");
+            readData('6');
+        }
+        function seven(event)
+        {
+            console.log("Seven Called");
+            readData('7');
+        }
+        function eight(event)
+        {
+            console.log("eight Called");
+            readData('8');
+        }
+        function nine(event)
+        {
+            console.log("nine Called");
+            readData('9');
+        }
+        function CE(event)
+        {
+            console.log("CE Called");
+            document.getElementById("mainScreen").innerText = '0';
+            startFlag = true;
+            mainStrPrev = false;// If True then perform action Else Append
+            dotFlag=false;
+        }
+        function C(event)
+        {
+            console.log("C Called");
+            document.getElementById("subScreen").innerText = '';
+            document.getElementById("mainScreen").innerText='0';
+            startFlag = true;
+            equalFlag = false;
+            mainStrPrev = false;// If True then perform action Else Append
+            dotFlag=false;
+            prevOperation="";
+        }
+        function work()
+        {
+            console.log("work Called");
+            console.log("close Called");
+            const mainScreen = document.getElementById("mainScreen");
+            console.log("mainScreen.innerText.length: ",mainScreen.innerText.length);
+            if (mainScreen.innerText.length>0 && mainScreen.innerText !='0')
+            {
+                if(mainScreen.innerText[mainScreen.innerText.length-1]=='.')
+                {
+                    dotFlag = false;
+                }
+                mainScreen.innerText = mainScreen.innerText.slice(0,mainScreen.innerText.length-1);
+                if(mainScreen.innerText.length==0)
+                {
+                    mainScreen.innerText = '0';
+                    mainStrPrev = true;
+                    startFlag=true;
+                }
+            }
+        }
+        function divide()
+        {
+            console.log("divide Called");
+            readData('/');
+        }
+        function multiply()
+        {
+            console.log("multiply Called");
+            readData('*');
+        }
+        function minus()
+        {
+            console.log("minus Called");
+            readData('-');
+        }
+        function plus()
+        {
+            console.log('Plus Called');
+            readData('+');
+        }
+        function equal(event)
+        {
+            console.log("equal Called");
+            readData('=');
+        }
+        function dot(event)
+        {
+            console.log("dot Called");
+            readData('.');
+        }
+        function negateValue(event)
+        {
+            console.log("negateValue Called");
+            mainScreen = document.getElementById("mainScreen");
+            let result = parseFloat(mainScreen.innerText);
+            if (result!=null)
+            {
+                console.log("Result: ",result);
+                if(result>0)
+                {
+                    mainScreen.innerText = "-" + mainScreen.innerText;
+                }
+                else if(result<0)
+                {
+                    mainScreen.innerText =  mainScreen.innerText.slice(1,mainScreen.innerText.length);
+                }
+            }
+        }
+        
+        zeroCheck();
+    </script>
+</body>
+</html>

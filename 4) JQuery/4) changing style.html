@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/jquery.png" type="image/png"/>
+		
+		<script type="text/javascript" src="jquery/jquery.min.js">//jquery added</script>
+		
+		<style>
+			#circle1{
+				border-radius: 50%;
+				background-color: green;
+				width: 200px;
+				height: 200px;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction:row-reverse;
+				justify-content: center;
+				align-items: center;
+			}
+			#circle2{
+				border-radius: 50%;
+				background-color: green;
+				width: 200px;
+				height: 200px;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction:row-reverse;
+				justify-content: center;
+				align-items: center;
+			}
+			#container{
+				background-color: red;
+				width: 600px;
+				height: 600px;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction:row-reverse;
+				justify-content: center;
+				align-items: center;
+			}
+			.disappear{
+				display: flex;
+				flex-direction:row-reverse;
+				justify-content: center;
+				align-items: center;
+			}
+			#circle{
+				border-radius: 50%;
+				background-color: green;
+				width: 200px;
+				height: 200px;
+				margin: 20px;
+			}
+			#square{
+				background-color: green;
+				width: 200px;
+				height: 200px;
+				margin: 20px;
+			}
+			
+		</style>
+		
+		<title>Change website style</title>
+    </head>
+    <body style="background-color: #e3e6e3">
+		
+		<div id="circle1">
+			<p>Click this circle to change color.</p>
+		</div>
+		<div id="circle2">
+			<p>Click on it to get width of the web body tag.</p>
+		</div>
+		<div id="container">
+			<div class="disappear"  id="circle">
+				<p>Click on it to disappear it.</p>
+			</div>
+			<div class="disappear" id="square">
+				<p>Click on it to disappear it.</p>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			$(document).ready(function () {
+				$( "#circle1" ).click(function() {
+					alert("Green color code is: "+$( "#circle1" ).css("background-color"));
+					$( "#circle1" ).css("background-color", "red");
+				});
+				
+				$( "#circle2" ).click(function() {
+					alert("Width of body is: "+$( "body" ).css("width"));
+					alert("Height of body is: "+$( "body" ).css("height"));
+				});
+				
+				$( ".disappear" ).click(function() {
+					//$( ".disappear" ).css("display", "none");        //it will disappear both of them
+					$(this).css("display", "none");                    //now the one clicked will be disappeared.
+					alert("You clicked on "+$(this).attr("id"));
+				});
+			});
+			
+		</script>
+		
+    </body>
+	
+</html>

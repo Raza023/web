@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Changing content</title>
+    </head>
+    <body>
+        <h1>Changing content</h1>
+        <p>Changing text.</p>
+        
+        <p id="text">This is a text.</p>
+        <button id="btn">Change text</button>
+
+        <p id="text2">Javascript is......</p>
+        <button id="btn2">Append text</button>
+        
+        <p id="text3"></p>
+        <button id="btn3">Create text</button>
+
+        <script type="text/javascript">
+            document.getElementById("btn").onclick=function()
+            {
+                document.getElementById("text").innerHTML="This ia a new text";
+            }
+            document.getElementById("btn2").onclick=function()
+            {
+                document.getElementById("text2").innerHTML="I think "+ document.getElementById("text2").innerHTML+"awesome";
+            }
+            document.getElementById("btn3").onclick=function()
+            {
+                document.getElementById("text3").innerHTML="<center><h1>Yeah text is here</h1></center>";
+				
+            }
+        </script>
+        
+    </body>
+</html>

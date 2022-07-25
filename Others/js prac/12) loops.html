@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    
+    <head>
+        
+        <title>For loop</title>
+        
+    </head>
+    
+    <body>
+        
+        <div id="display"></div>
+        
+        <script type="text/javascript">
+        
+            var tweets = ["first", "second", "third", "fourth"];
+
+            for(var i=0; i<tweets.length; i++)
+            {
+                alert(tweets[i]);
+            }
+
+            var string="";
+
+            for(var i=0; i<tweets.length; i++)
+            {
+                string = string + "<p>" + tweets[i] + "</p>";
+            }
+
+            document.getElementById("display").innerHTML = string;
+        
+        </script>
+        
+    </body>
+    
+</html>

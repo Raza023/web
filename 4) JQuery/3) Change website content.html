@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/jquery.png" type="image/png"/>
+		
+		<script type="text/javascript" src="jquery/jquery.min.js">//jquery added</script>
+		
+		<style>
+			.circle{
+				border-radius: 50%;
+				background-color: green;
+				width: 200px;
+				height: 200px;
+				margin-bottom: 20px;
+			}
+		</style>
+		
+		<title>Change website content</title>
+    </head>
+    <body style="background-color: #e3e6e3">
+		
+		<div class="circle"></div>
+		<h2>Click circle to change text.</h2>
+		<h1>Hover on circle to change following website</h1>
+		<iframe src="https://www.bing.com" width="100%" height="600px"></iframe>
+		
+		<script type="text/javascript">
+			
+			$(document).ready(function () {
+				$( ".circle" ).click(function() {
+					$( "h2" ).text("Text has been changed.");   //same as html("<h1>Text has been changed.</h1>")
+				});
+				
+				$( ".circle" ).hover(function() {
+					$( "iframe" ).attr("src","https://www.wikipedia.org");
+					$( "iframe" ).attr("height","200px");
+				});
+			});
+			
+		</script>
+		
+    </body>
+	
+</html>

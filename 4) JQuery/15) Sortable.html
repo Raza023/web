@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+
+    <title>Sortable</title>
+</head>
+
+<body>
+    <ul id="sort">
+        <li>first one</li>
+        <li>second one</li>
+        <li>third one</li>
+        <li>fourth one</li>
+        <li>fifth one</li>
+        <li>sixth one</li>
+    </ul>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function ()
+        {
+            $("#sort").sortable();
+        });
+    </script>
+
+</body>
+
+</html>

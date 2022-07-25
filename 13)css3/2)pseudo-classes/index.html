@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes</title>
+    <style>
+        a{
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+
+        input:focus{
+            background-color: lightgreen;
+        }
+
+        input:enabled{
+            text-decoration: underline;
+        }
+        input:disabled{
+            text-decoration: underline;
+        }
+        input:checked{
+            text-decoration: underline;
+        }
+
+        /* if any elemenet has first element of p */
+        p:first-child{
+            color: blue;
+        }
+
+        /* if any elemenet has last element of p */
+        p:last-child{
+            background-color: yellow;
+        }
+
+        /* if any elemenet has only element of p */
+        p:only-child{
+            text-align: center;
+        }
+
+        /* if any elemenet has element of p (will be applied on first one.)*/
+        p:first-of-type{
+            text-decoration: underline;
+        }
+
+        /* if any elemenet has element of p (will be applied on last one.)*/
+        p:last-of-type{
+            font-weight: bold;
+        }
+
+        /* if any elemenet has one element of p (might have some other elements as well.)*/
+        p:only-of-type{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        tr:nth-child(2n){
+            background-color: lightgrey;
+        }
+        /* tr:nth-child(2n-1){
+            background-color: lightgreen;
+        } */
+
+        tr:nth-last-child(2n){
+            background-color: lightgreen;
+        }
+
+        /* div ka pahla har element type pr */
+        div:nth-of-type(1){
+            text-align: center;
+        }
+        
+        div:empty{
+            display: none;
+        }
+
+        p:not(.green)
+        {
+            color: blue;
+        }
+
+        :not(p)
+        {
+            font-style: italic;
+        }
+
+        p:first-letter{
+            font-size:x-large;
+        }
+
+        p:first-line{
+            text-decoration:line-through;
+        }
+
+        a::after{
+            content: " ("attr(href)")";
+        }
+
+
+
+        
+
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com/" target="_blank">Google Search engine</a>
+    <br>
+    <Label>Write something here: </Label>
+    <input type="text" name="text" id="text">
+    <div>
+        <p>This is some text.</p>
+        <h4>this is h4.</h4>
+    </div>
+    <p>This is some text.</p>
+    <div>
+        <h2>some text</h2>
+        <a href="https://www.udemy.com/">Udemy</a>
+        <p>This is some text.</p>
+    </div>
+    <div>
+        <p>this is some text.</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>names</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hassan</td>
+            </tr>
+            <tr>
+                <td>Hussain</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+            </tr>
+            <tr>
+                <td>Abbas</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

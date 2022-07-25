@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <div id="resize" style="width: 100px; height: 100px; background-color:yellow;"></div>
+    <div id="forthis" style="width: 100px; height: 100px; background-color:blue;"></div>
+    <div id="also" style="width: 100px; height: 100px; background-color:red;"></div>
+    
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#resize").resizable({
+                resize:function(event,ui){           //callback function.
+                    if($("#resize").width()>300)     //width() returns 300 whereas .css("width") will return 300px.
+                    {
+                        $("#resize").width(300);
+                        //alert("big enough!");
+                    }
+                    if($("#resize").height()>300)     //height() returns 300 whereas .css("height") will return 300px.
+                    {
+                        $("#resize").height(300);
+                        //alert("big enough!");
+                    }
+                }
+            });
+            $("#forthis").resizable({
+                grid:50,
+                alsoResize:"#also"              //also resize this one.s
+            });
+            $("#also").resizable();
+        });
+    </script>
+</body>
+</html>

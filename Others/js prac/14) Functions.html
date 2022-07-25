@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>  
+        <title>Functions</title>
+    </head>
+    <body>
+        <p>How many fingers are you holding up?</p>
+        <p>
+            <select id="value">
+                <option>0</option>
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <button id="myButton">Guess!</button>
+        </p>
+        <script type="text/javascript">
+            
+            function avg(a,b)
+            {
+                return ((a+b)/2);
+            }
+            
+            alert("AVG of 5 and 6 is "+avg(5,6)+".");
+            
+            function doAGuess(val1)
+            {
+                var randomNo = Math.floor(Math.random()*6); //once make a random number.
+                if(val1 == randomNo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            
+            document.getElementById("myButton").onclick = function()
+            {
+                var flag = false;
+                var counter = 0;
+                while(flag == false)
+                {
+                    var val=document.getElementById("value").value;
+                    if(doAGuess(val) == true)
+                    {
+                        counter++;
+                        alert("Yeah! Computer got "+val+". Computer took "+counter+" guesses to get it.");
+                        flag = true;
+                    }
+                    else
+                    {
+                        counter++;
+                        if(counter==1) {
+                            alert("Nope, failed on "+counter+"st guess!");
+                        }
+                        else if(counter == 2) {
+                            alert("Nope, failed on "+counter+"nd guess!");
+                        }
+                        else if (counter == 3) {
+                            alert("Nope, failed on "+counter+"rd guess!");
+                        }
+                        else {
+                            alert("Nope, failed on "+counter+"th guess!");
+                        }
+                    }
+                }
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Borders</title>
+        <!-- border: 10px yellow solid; for border size, color and border style respectively. -->
+        <!-- border-radius: 50% gives us a circle. or use 50px for 100px object. -->
+        <!-- All styles:
+        border-style: solid;
+        border-style: dashed;
+        border-style: dotted;
+        border-style: double;
+        border-style: ridge;
+        border-style: groove;
+        border-style: inset;
+        border-style: outset;
+        -->
+        <style type="text/css">
+            #redSquare{
+                background-color: red;
+                border: 10px yellow solid;
+                border-radius: 10px;
+            }
+            #greenSquare{
+                background-color: green;
+                border: 10px;
+                border-color: red;
+                border-style: solid;
+                border-radius: 10px;
+            }
+            #blueSquare{
+                background-color: blue;
+                border-width: 15px 13px 12px 10px;
+                border-color: green pink yellow lime;
+                border-style: solid dashed double dotted;
+                border-radius: 10px;
+            }
+            .square{
+                width: 100px;
+                height: 100px;
+                margin: 40px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="redSquare" class="square"></div>
+        <div id="greenSquare" class="square"></div>
+        <div id="blueSquare" class="square"></div>
+        
+    </body>
+</html>

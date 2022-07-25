@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Guess my fingers.</title>
+	</head>
+	<body>
+		<h1>Guess my fingers game.</h1>
+		
+		<br>
+		
+		<p>How many fingers am I holding up?</p>
+		<input id="inp" type="text" required>
+		<input id="btn" type="submit" value="check">
+		
+		<script>
+			document.getElementById("btn").onclick = function()
+			{
+				let max=5; //it should be initialized here not outside because we want it every time when button is clicked.
+				let min=1;
+				let inpVal = document.getElementById("inp").value;
+				//console.log(typeof inpVal);     //it's a string.
+				let intinp = parseInt(inpVal);    //converted to int.
+				let rand = Math.floor(Math.random() * (max - min + 1) ) + min;
+				let randstr=rand.toString();
+				if(intinp>5)
+				{
+					alert("Enter a value less than or equal to 5.");
+				}
+				else if(intinp<1)
+				{
+					alert("Enter a value greater than or equal to 1.");
+				}
+				else
+				{
+					if(inpVal===randstr)
+					{
+						alert("Yeah, you got it right. It is "+randstr+".");
+					}
+					else
+					{
+						alert("Nope, it was "+randstr+"!");
+					}
+				}
+			}
+			
+			//syntax of writing function.
+			function sum(a,b)
+			{
+				return (a+b);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        /* #clockBoard{
+            border: 1px solid black;
+        } */
+    </style>
+</head>
+<body>
+    <canvas id="clockBoard" width="500" height="500">
+        Canvas does not work in yor browser!
+    </canvas>
+
+    <script>
+        function runClock()
+        {
+            var canvas = document.getElementById("clockBoard");
+            var context = canvas.getContext("2d");
+            var clockRad =canvas.width/2;
+
+            //circle filled
+            context.beginPath();
+            //arc(centerOfCircle(x,y),radius(r),radiants(0, to 2*Pi));
+            context.arc(clockRad,clockRad,clockRad,0,2*Math.PI);
+            context.fillStyle = "black";
+            context.fill();               //fill the circle
+
+            //tiny little inner circle.
+            context.beginPath();
+            //arc(centerOfCircle(x,y),radius(r),radiants(0, to 2*Pi));
+            context.arc(clockRad,clockRad,10,0,2*Math.PI);
+            context.fillStyle = "white";
+            context.fill();               //fill the circle
+
+            //text
+            context.font = clockRad/10+"px Arial";
+            context.textAlign = 'center';           //horizontally center.
+            context.textBaseLine = 'middle'         //verticaally middled.
+            context.fillStyle = "white";
+            // context.fillText("12", clockRad, clockRad-(clockRad*0.9));
+            // context.fillText("1",clockRad+(clockRad*0.9*Math.sin((2*Math.PI)/12)),clockRad-(clockRad*0.9*Math.cos((2*Math.PI)/12)));
+            // context.fillText("2",clockRad+(clockRad*0.9*Math.sin((2*Math.PI)/6)),clockRad-(clockRad*0.9*Math.cos((2*Math.PI)/6)));
+            // context.fillText("3",clockRad+(clockRad*0.9*Math.sin((2*Math.PI)/4)),clockRad-(clockRad*0.9*Math.cos((2*Math.PI)/4)));
+            // context.fillText("4",clockRad+(clockRad*0.9*Math.sin((2*Math.PI)/3)),clockRad-(clockRad*0.9*Math.cos((2*Math.PI)/3)));
+
+            for(var i=1;i<=12;i++)   //same as above
+            {
+                context.fillText(i,clockRad+(clockRad*0.9*Math.sin(i*(2*Math.PI)/12)),clockRad-(clockRad*0.9*Math.cos(i*(2*Math.PI)/12)));   
+            }
+            
+            var hours = new Date().getHours();
+            //alert(hours);
+            var minutes = new Date().getMinutes();
+            //alert(minutes);
+            var seconds = new Date().getSeconds();
+            //alert(seconds);
+
+            var fullHours = hours%12+minutes/60+seconds/3600;    //12 hours format ([psition of hours stick]).
+            // alert(fullHours);
+            var fullMinutes = minutes;
+            // alert(fullMinutes);
+            var fullSeconds = seconds;
+            // alert(fullSeconds);
+
+            context.moveTo(clockRad,clockRad);
+            context.lineTo(clockRad+(clockRad*0.6*Math.sin(fullHours*(2*Math.PI)/12)),clockRad-(clockRad*0.6*Math.cos(fullHours*(2*Math.PI)/12)));
+            context.lineWidth = 5;
+            context.strokeStyle = "white";
+            context.stroke();
+
+            context.moveTo(clockRad,clockRad);
+            context.lineTo(clockRad+(clockRad*0.75*Math.sin(fullMinutes*(2*Math.PI)/60)),clockRad-(clockRad*0.75*Math.cos(fullMinutes*(2*Math.PI)/60)));
+            context.lineWidth = 3;
+            context.strokeStyle = "white";
+            context.stroke();
+
+            context.moveTo(clockRad,clockRad);
+            context.lineTo(clockRad+(clockRad*0.9*Math.sin(fullSeconds*(2*Math.PI)/60)),clockRad-(clockRad*0.9*Math.cos(fullSeconds*(2*Math.PI)/60)));
+            context.lineWidth = 1;
+            context.strokeStyle = "white";
+            context.stroke();
+        }
+        setInterval(runClock,1000);
+    </script>
+</body>
+</html>

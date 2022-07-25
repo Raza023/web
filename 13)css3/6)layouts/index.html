@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts</title>
+    <style>
+        .multi-column{
+            padding: 20px;
+            text-align: justify;
+
+            -webkit-column-count: 3;    /*for chrome,edge,safari*/
+            -moz-column-count: 3;      /*for firefox*/
+            column-count: 3;
+            -webkit-column-gap: 30px;    /*for chrome,edge,safari*/
+            -moz-column-gap: 30px;      /*for firefox*/
+            column-gap: 30px;
+            
+            -webkit-column-rule: 1px solid grey;
+            -moz-column-rule: 1px solid grey;
+            column-rule: 1px solid grey;
+            /* column-rule-width: 1px;
+            column-rule-style: solid;
+            column-rule-color: grey; */
+        }
+        #container{
+            background-color: yellow;
+            width: 100%;
+            height: -webkit-calc(100% - 50px);
+            height: calc(100% - 50px);
+        }
+        h1 {
+            column-span: all;
+            -webkit-column-span: all;
+            -moz-column-spam: all;
+        }
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /* div,h1,p{
+            margin: 0;
+            padding: 0;
+        } */
+        h2{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding: 10px;
+        }
+        .flexbox-container{
+            width: 100%;
+            height: 360px;
+            background-color: aqua;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .flexbox-item{
+            background-color: lightsalmon;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="width:100%; height:50px; background-color: gray;">
+        <h2>This is Header</h2>
+    </header>
+
+    <div id="container">
+        <div class="multi-column">
+            <h1>Heading Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quo saepe repellat reiciendis exercitationem eligendi maxime, natus modi quod nobis quasi eius deleniti neque voluptas, fuga pariatur officiis nulla dolores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae eveniet ducimus aut facilis, error doloremque nobis maiores maxime in voluptatibus illo, rem temporibus officiis. Quod assumenda laudantium aspernatur impedit soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nobis praesentium voluptas quibusdam eveniet illo fugit, voluptatum omnis quod ab quidem totam itaque esse placeat corporis! In hic harum cupiditate? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, doloremque placeat. Omnis rem quam ad numquam aliquam, ea accusamus recusandae doloremque officiis cumque labore qui at dicta molestiae veritatis ducimus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quisquam doloremque voluptatum quod, quis at minima porro quae, dolore quia earum laborum praesentium, amet ea? Neque aliquid impedit necessitatibus est!</p>
+        </div>
+        <div class="flexbox-container">
+            <div class="flexbox-item" style="border: 5px solid grey;">Item 1</div>
+            <div class="flexbox-item">Item 2</div>
+            <div class="flexbox-item">Item 3</div>
+            <div class="flexbox-item">Item 4</div>
+            <div class="flexbox-item">Item 5</div>
+            <div class="flexbox-item">Item 6</div>
+            <div class="flexbox-item">Item 7</div>
+            <div class="flexbox-item">Item 8</div>
+            <div class="flexbox-item">Item 9</div>
+        </div>
+    </div>
+
+    
+    
+
+</body>
+</html>

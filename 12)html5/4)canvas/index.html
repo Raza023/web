@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #myCanvas{
+            border: 1px solid grey;
+        }
+        #myCanvas2{
+            border: 1px solid grey;
+        }
+        #myCanvas3{
+            border: 1px solid grey;
+        }
+        #myCanvas4{
+            border: 1px solid grey;
+        }
+        #myCanvas5{
+            border: 1px solid grey;
+        }
+        #myCanvas6{
+            border: 1px solid grey;
+        }
+        #myCanvas7{
+            border: 1px solid grey;
+        }
+    </style>
+    <title>Canvas</title>
+</head>
+<body>
+    
+    <h1>Rectangle and line</h1>
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+    <br>
+    <h1>Rectangle and circle</h1>
+    <canvas id="myCanvas2" width="500" height="400"></canvas>
+    <br>
+    <h1>Circle</h1>
+    <canvas id="myCanvas3" width="500" height="400"></canvas>
+    <br>
+    <h1>Semicircle</h1>
+    <canvas id="myCanvas4" width="500" height="400"></canvas>
+    <br>
+    <h1>Quarter-Circle</h1>
+    <canvas id="myCanvas5" width="500" height="400"></canvas>
+    <h1>Gradiant</h1>
+    <canvas id="myCanvas6" width="500" height="400"></canvas>
+    <h1>Text</h1>
+    <canvas id="myCanvas7" width="500" height="400"></canvas>
+    
+    <script>
+        
+        //myCanvas
+        var mycanvas = document.getElementById("myCanvas");
+        var context = mycanvas.getContext("2d");
+        context.fillStyle = "blue";
+        context.fillRect(0,0,300,300);
+
+        //line from bottom-left to top-right;
+        context.moveTo(0,400);
+        context.lineTo(500,0);
+        context.lineWidth = 10;
+        context.strokeStyle = "red";
+        context.stroke();
+
+
+        //myCanvas2
+        var mycanvas2 = document.getElementById("myCanvas2");
+        var context2 = mycanvas2.getContext("2d");
+        context2.fillStyle = "blue";
+        context2.fillRect(100,100,300,200);
+
+        context2.moveTo(100,100);
+        context2.lineTo(400,300);
+
+        context2.moveTo(400,100);
+        context2.lineTo(100,300);
+
+        context2.lineWidth = 5;
+        context2.strokeStyle = "white";
+        context2.stroke();
+
+        context2.beginPath();
+        //arc(centerOfCircle(x,y),radius(r),radiants(0, to 2*Pi));
+        context2.arc(100,100,50,0,2*Math.PI);
+
+        context2.lineWidth = 1;
+        context2.strokeStyle = "grey";
+        context2.stroke();
+
+        //circle
+        var mycanvas3 = document.getElementById("myCanvas3");
+        var context3 = mycanvas3.getContext("2d");
+
+        context3.beginPath();
+        //arc(centerOfCircle(x,y),radius(r),radiants(0, to 2*Pi));
+        context3.arc(250,200,150,0,2*Math.PI);
+
+        context3.lineWidth = 1;
+        context3.strokeStyle = "grey";
+        context3.stroke();
+
+        //semicircle
+        var mycanvas4 = document.getElementById("myCanvas4");
+        var context4 = mycanvas4.getContext("2d");
+
+        context4.beginPath();
+        //arc(centerOfCircle(x,y),radius(r),radiants(0, to 2*Pi));
+        context4.arc(250,200,150,Math.PI,2*Math.PI);
+
+        context4.lineWidth = 1;
+        context4.strokeStyle = "grey";
+        context4.stroke();
+
+        context4.moveTo(100,200);
+        context4.lineTo(400,200);
+        context4.lineWidth = 1;
+        context4.strokeStyle = "grey";
+        context4.stroke();
+
+        //quarter-circle
+        var mycanvas5 = document.getElementById("myCanvas5");
+        var context5 = mycanvas5.getContext("2d");
+
+        context5.beginPath();
+        //arc(centerOfCircle(x,y),radius(r),radiants(0, to 2*Pi));
+        context5.arc(250,200,150,Math.PI,2*Math.PI * 3/4);
+
+        context5.lineWidth = 1;
+        context5.strokeStyle = "grey";
+        context5.stroke();
+
+        context5.moveTo(100,200);
+        context5.lineTo(250,50);
+        context5.lineWidth = 1;
+        context5.strokeStyle = "grey";
+        context5.stroke();
+
+        //gradient
+        var mycanvas6 = document.getElementById("myCanvas6");
+        var context6 = mycanvas6.getContext("2d");
+
+        var gradient = context6.createLinearGradient(100,100,400,300);
+        // var gradient = context6.createLinearGradient(100,100,400,100);       from left to right.
+
+        gradient.addColorStop(0,"green");        
+        gradient.addColorStop(1,"yellow");
+        
+
+        context6.fillStyle = gradient;
+        context6.fillRect(100,100,300,200);
+
+        //text
+        var mycanvas7 = document.getElementById("myCanvas7");
+        var context7 = mycanvas7.getContext("2d");
+
+        var gradient2 = context7.createLinearGradient(100,100,200,100);
+        gradient2.addColorStop(0,"green");        
+        gradient2.addColorStop(1,"red");
+        
+        
+        context7.font = "20px Arial";
+        context7.fillStyle = gradient2;
+        context7.fillText("This is some text.",100,100);
+        
+    </script>
+</body>
+</html>

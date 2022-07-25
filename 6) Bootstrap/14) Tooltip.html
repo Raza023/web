@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    
+
+    <button  type="button" class="btn btn-secondary" id="myTooltip" data-bs-toggle="tooltip" data-bs-html="true"
+        title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+        Tooltip with HTML
+    </button>
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+
+        const myTooltipEl = document.getElementById('myTooltip');
+        const tooltip = bootstrap.Tooltip.getOrCreateInstance(myTooltipEl);
+        myTooltipEl.addEventListener('shown.bs.tooltip', () => {
+            alert("shown");
+        });
+        tooltip.hide();
+
+        //   $('[data-toggle="tooltip"]').tooltip();
+        //   $("#myTooltip").on('shown.bs.tooltip', function() {
+        //       alert("Tooltip displayed!");
+        //   });
+    </script>
+</body>
+
+</html>

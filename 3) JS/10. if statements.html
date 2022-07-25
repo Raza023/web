@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If statements</title>
+</head>
+<body>
+    <h1>If statements</h1>
+    
+    <p>What is my name?</p>
+    <form action="">
+        <p><input id="inp" type="text" required></p>
+        <p><input id="btn" type="submit" value="Check"></p>
+    </form>
+    
+    <script type="text/javascript">
+        let x=1;
+        document.getElementById("btn").onclick = function()
+        {
+            let enteredVal = document.getElementById("inp").value;
+            let name="hassan";
+            if(enteredVal.toLowerCase()==name)
+            {
+                alert("Yes!\nMy name is "+enteredVal+".");
+            }
+            else
+            {
+                alert("Nope, try again!");
+            }
+        }
+    </script>
+</body>
+</html>

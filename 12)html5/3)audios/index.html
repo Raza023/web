@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    
+    <center>
+        <audio controls>
+            <source src="la_fatah.mp3" type="audio/mpeg">
+            audio play not supported!
+        </audio>
+
+        <br>
+
+        <!-- background music -->
+        <audio id="myAudio" controls autoplay>
+            <source src="la_fatah.mp3" type="audio/mpeg">
+            audio play not supported!
+        </audio>
+
+        <br>
+
+        <button style="font-weight: bold;" id="btn">play</button>
+    </center>
+
+    <script>
+        document.getElementById("btn").onclick = function(){
+            if(document.getElementById("myAudio").paused)
+            {
+                document.getElementById("myAudio").play();
+                this.innerHTML ="pause";
+            }
+            else
+            {
+                document.getElementById("myAudio").pause();
+                this.innerHTML="play";
+            }
+        }
+    </script>
+
+</body>
+</html>

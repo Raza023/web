@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <div id="show"></div>
+    <div id="showArrayData"></div>
+    <script>
+        if(typeof(Storage)!== "undifined")
+        {
+            let v = "some data in local storage stored using variable.";
+            localStorage.setItem("myData",v);
+            document.getElementById("show").innerHTML = localStorage.getItem("myData");
+
+            let arr=[];
+            arr[0]="array[0] data in local storage";
+            arr[1]="array[1] data in local storage";
+            localStorage.setItem("myArray",JSON.stringify(arr));
+
+            let gettingArray = [];
+            gettingArray = JSON.parse(localStorage.getItem("myArray"));
+            for(let i=0;i<gettingArray.length;i++)
+            {
+                document.getElementById("showArrayData").innerHTML =document.getElementById("showArrayData").innerHTML + gettingArray[i] + "<br>";
+            }
+        }
+        else
+        {
+            alert("Your browser does not support local storage.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" href="star.png" type="image/png"/>
+		<title>Ludo</title>
+    </head>
+    <body style="background-color: #e3e6e3">
+		
+		<div id="board" >
+			<div id="red-side">
+				<div id="rspace1"><div id="rp1"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="rspace2"><div id="rp2"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="rspace3"><div id="rp3"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="rspace4"><div id="rp4"><img src="star.png" width="29px" height="29px"></div></div>
+			</div>
+			<div id="green-side">
+				<div id="gspace1"><div id = "gp1"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="gspace2"><div id = "gp2"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="gspace3"><div id = "gp3"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="gspace4"><div id = "gp4"><img src="star.png" width="29px" height="29px"></div></div>
+			</div>
+			<div id="blue-side">
+				<div id="bspace1"><div id="bp1"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="bspace2"><div id="bp2"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="bspace3"><div id="bp3"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="bspace4"><div id="bp4"><img src="star.png" width="29px" height="29px"></div></div>
+			</div>
+			<div id="yellow-side">
+				<div id="yspace1"><div id="yp1"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="yspace2"><div id="yp2"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="yspace3"><div id="yp3"><img src="star.png" width="29px" height="29px"></div></div>
+				<div id="yspace4"><div id="yp4"><img src="star.png" width="29px" height="29px"></div></div>
+			</div>
+			
+			<div id="red-runway">
+				<div id="r1"></div>
+				<div id="r2"></div>
+				<div id="r3"></div>
+				<div id="r4"></div>
+				<div id="r5"></div>
+				<div id="r6"></div>
+				<div id="r7"></div>
+				<div id="r8"></div>
+				<div id="r9"></div>
+				<div id="r10"></div>
+				<div id="r11"></div>
+				<div id="r12"></div>
+				<div id="r13"></div>
+				<div id="r14"></div>
+				<div id="r15"></div>
+				<div id="r16"></div>
+				<div id="r17"></div>
+				<div id="r18"></div>
+			</div>
+				
+			<div id="yellow-runway">
+				<div id="y1"></div>
+				<div id="y2"></div>
+				<div id="y3"></div>
+				<div id="y4"></div>
+				<div id="y5"></div>
+				<div id="y6"></div>
+				<div id="y7"></div>
+				<div id="y8"></div>
+				<div id="y9"></div>
+				<div id="y10"></div>
+				<div id="y11"></div>
+				<div id="y12"></div>
+				<div id="y13"></div>
+				<div id="y14"></div>
+				<div id="y15"></div>
+				<div id="y16"></div>
+				<div id="y17"></div>
+				<div id="y18"></div>
+			</div>
+			<div id="blue-runway">
+				<div id="b1"></div>
+				<div id="b2"></div>
+				<div id="b3"></div>
+				<div id="b4"></div>
+				<div id="b5"></div>
+				<div id="b6"></div>
+				<div id="b7"></div>
+				<div id="b8"></div>
+				<div id="b9"></div>
+				<div id="b10"></div>
+				<div id="b11"></div>
+				<div id="b12"></div>
+				<div id="b13"></div>
+				<div id="b14"></div>
+				<div id="b15"></div>
+				<div id="b16"></div>
+				<div id="b17"></div>
+				<div id="b18"></div>
+			</div>
+				
+			<div id="green-runway">
+				<div id="g1"></div>
+				<div id="g2"></div>
+				<div id="g3"></div>
+				<div id="g4"></div>
+				<div id="g5"></div>
+				<div id="g6"></div>
+				<div id="g7"></div>
+				<div id="g8"></div>
+				<div id="g9"></div>
+				<div id="g10"></div>
+				<div id="g11"></div>
+				<div id="g12"></div>
+				<div id="g13"></div>
+				<div id="g14"></div>
+				<div id="g15"></div>
+				<div id="g16"></div>
+				<div id="g17"></div>
+				<div id="g18"></div>
+			</div>
+				
+			<div id="ctr">
+				<div id="arrow-right">
+				</div>
+				<div id = "arrow-left">
+				</div>
+				<div id="arrow-up">
+				</div>
+				<div id = "arrow-down">
+				</div>
+				
+			</div>
+
+		</div>
+		
+		<div id="gamepad">
+			<fieldset>
+				<legend><h1><b>Gamepad</b></h1></legend>
+				<button id="btn" class="btn btn-success"><h2>Roll Dice</h2></button>
+				<h1 id="plr"></h1>
+				<h1 id="num"></h1>
+			</fieldset>
+		</div>
+        
+		<script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

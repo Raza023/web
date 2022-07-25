@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Pseudo classes</title>
+		<!-- Pseudo classes.-->
+		<!-- : represents the psedo classes.-->
+        <!-- a or a:link to difine unvisited. -->
+        <!-- a:hover when we hower. -->
+        <!-- a:visited when we have visited. -->
+        <!-- a:active when we click on link. -->
+		
+		<!-- li:nth-child(index)   lets suppose we have 10 li elements.
+			 index -> 1-10
+			 index -> even          for even elements.
+			 index -> odd           for odd elements.
+			 index -> 2n            where n = 0->number of elements 
+			 index -> 2n+1          where n = 0->number of elements 
+			 index -> 4n+3          where n = 0->number of elements 
+		-->
+		
+        <style type="text/css">
+		
+			/*
+			li:nth-child(5){
+				font-size:20px;
+				background-color: yellow;
+			}
+
+			li:nth-child(even){
+				font-size:20px;
+				background-color: yellow;
+			}
+			li:nth-child(odd){
+				font-size:20px;
+				background-color: lightblue;
+			}
+			
+			li:nth-child(3n){
+				font-size:20px;
+				background-color: yellow;
+			}
+			
+			*/
+			
+			li:nth-child(2n+3){
+				font-size:20px;
+				background-color: yellow;
+			}
+			
+            a{
+                background-color: lime;
+                text-decoration: none;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+            }
+            a:hover{
+                background-color: yellow;
+                text-decoration: underline;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+                color: red;
+            }
+            a:visited{
+                background-color: pink;
+                text-decoration: none;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+                color: brown;
+            }
+            a:active{
+                background-color: yellow;
+                text-decoration: none;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+                color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <p><a target="_blank" href="https://www.google.com">Goolge</a></p>
+        <br>
+        <p><a target="_blank" href="http://razacricket.unaux.com">Raza Cricket</a></p>
+		<br/>
+		<br/>
+		<ul>
+			<li>first</li>
+			<li>second</li>
+			<li>third</li>
+			<li>fourth</li>
+			<li>fifth</li>
+			<li>sixth</li>
+			<li>seventh</li>
+			<li>eighth</li>
+			<li>nineth</li>
+			<li>tenth</li>
+		</ul>
+    </body>
+</html>

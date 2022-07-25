@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    
+    <head>
+        
+        <title>Guess my fingers</title>
+        
+    </head>
+    
+    <body>
+        
+        <h1 style="text-align: center">Guess my fingers game</h1>
+        
+        <p>How many fingers am I holding up? (0-5)</p>
+        
+        <p><input id="text" type="text"> <button id="myButton">Guess</button></p>
+        
+        <script type="text/javascript">
+            
+            //var rand = Math.floor(Math.random()*6); //once gives random number b/w 0 and 5
+            
+            document.getElementById("myButton").onclick = function()
+            {
+                var rand = Math.floor(Math.random()*6); //everytime gives random number b/w 0 and 5
+                // Math.random() gives random number b/w 0 and 1.
+
+                if(rand>5)
+                {
+                    rand=5;
+                }
+
+                if(rand<0)
+                {
+                    rand=0;
+                }
+                
+                if(document.getElementById("text").value >= 0 && document.getElementById("text").value <= 5)
+                {
+                    if(document.getElementById("text").value == rand)
+                    {
+                        alert("Yeah! you got it.");
+                    }
+                    else
+                    {
+                        alert("Nope! The answer is "+rand+".");
+                    }
+                }
+                else
+                {
+                    alert("Error! Please enter a value from 0 to 5.");
+                }
+            }
+            
+        </script>
+        
+    </body>
+    
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/jquery.png" type="image/png" />
+
+	<script type="text/javascript" src="jquery/jquery.min.js">//jquery added</script>
+
+	<style>
+		.square {
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			margin-bottom: 20px;
+		}
+
+		.circle {
+			border-radius: 50%;
+			background-color: green;
+			width: 200px;
+			height: 200px;
+			margin-bottom: 20px;
+		}
+	</style>
+
+	<title>JQuery Button Click</title>
+</head>
+
+<body style="background-color: #e3e6e3">
+
+	<div class="circle"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			$(".circle").click(function () {
+				alert("A circle was clicked.");
+			});
+
+			$(".square").click(function () {
+				alert("A square was clicked.");
+			});
+		});
+
+
+
+
+	</script>
+
+</body>
+
+</html>

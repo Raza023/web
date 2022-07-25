@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<widget
+    android-versionCode = '1'
+    id = 'com.UltraLegends.ultraludo'
+    version = '1.0.0'
+    xmlns = 'https://www.w3.org/ns/widgets'>
+
+    <name>Ultra Ludo</name>
+    <description>Ludo made by UltraLegends</description>
+    <author>UltraLegends</author>
+	
+	<preference name="SplashScreenDelay" value="2000" />
+	<preference name="AutoHideSplashScreen" value="true" />
+	<plugin name="cordova-plugin-splashscreen" />
+
+</widget>

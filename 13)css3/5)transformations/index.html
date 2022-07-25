@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations</title>
+    <style>
+        #box{
+            float: left;
+            margin-right: 60px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            /* transition: 1s linear;
+            transition: 1s ease-in;
+            transition: 1s ease;
+            transition: 1s ease-out; */
+            transition: 1s ease-in-out;
+            
+        }
+
+        #box:hover{
+            transform: translate(150px,150px);
+        }
+
+        #box2{
+            float: left;
+            margin-right: 60px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            transition: 1s ease-in-out;
+        }
+
+        #box2:hover{
+            transform: rotate(40deg);
+        }
+
+        #box3{
+            float: left;
+            margin-right: 60px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            transition: 1s ease-in-out;
+        }
+
+        #box3:hover{
+            transform: scale(2,2)
+        }
+
+        #box4{
+            float: left;
+            margin-right: 60px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            transition: 1s ease-in-out;
+        }
+
+        #box4:hover{
+            transform:skew(-20deg,-30deg);
+        }
+
+        #box5{
+            float: left;
+            margin-right: 60px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            transition: 1s ease-in-out;
+        }
+
+        #box5:hover{
+            /* transform:rotateX(360deg); */
+            /* transform:rotateY(360deg); */
+            transform:rotateZ(360deg);
+        }
+        
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body style="display: flex; align-items: center; justify-content: center;">
+
+<div style="display: flex; flex-wrap: wrap;">
+    <div id="box">a</div>
+    <div id="box2">b</div>
+    <div id="box3">c</div>
+    <div id="box4">d</div>
+    <div id="box5">e</div>
+</div>
+    
+    
+    
+</body>
+</html>

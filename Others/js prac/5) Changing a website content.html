@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Changing a website content</title>
+    </head>
+    <body>
+        <h1>Changing text:</h1>
+        <p id="text">Hello world</p>
+        <button id="myButton">Change text</button>
+        <h1>Appending text:</h1>
+        <p id="text2">Javascript is ...</p>
+        <button id="button2">Append text</button>
+        <h1>Creating text:</h1>
+        <p id="text3"></p>
+        <button id="button3">Create text</button>
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function()
+            {
+                document.getElementById("text").innerHTML = "Yeah! text has been changed.";
+            }
+            document.getElementById("button2").onclick = function()
+            {
+                document.getElementById("text2").innerHTML = "I think " + document.getElementById("text2").innerHTML + "awsome.";
+            }
+            document.getElementById("button3").onclick = function()
+            {
+                document.getElementById("text3").innerHTML = "<h1>Heading text has been created!</h1>";
+            }
+        </script>
+    </body>
+</html>

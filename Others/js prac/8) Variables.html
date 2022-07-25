@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    
+    <head>
+        
+        <title>Variables</title>
+        
+    </head>
+    
+    <body>
+        
+        <h1>Variables</h1>
+        <input id="inp" type="text">
+        <button id="changeText">Change text</button>
+        <p id="text">This is the text to be changed by input value.</p>
+        
+        <script type="text/javascript">
+            var x=10;
+            var x2=10;
+            var str="Value is "
+            alert(str+x+".")
+            
+            document.getElementById("changeText").onclick = function()
+            {
+                var data = document.getElementById("inp").value;
+                document.getElementById("text").innerHTML = data;
+            }
+            
+        </script>
+        
+    </body>
+</html>

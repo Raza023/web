@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    
+    <head>
+        
+        <title>While loop</title>
+        
+    </head>
+    
+    <body>
+        
+        <div id="display"></div>
+        
+        <script type="text/javascript">
+            
+            var tweets = ["first", "second", "third", "fourth"];
+            
+            var string="";
+            
+            var i=0;
+            while(i<tweets.length)
+            {
+                string = string + "<p>" + tweets[i] + "</p>";
+                i++;
+            }
+            
+            document.getElementById("display").innerHTML = string;
+            
+        </script>
+        
+    </body>
+    
+</html>

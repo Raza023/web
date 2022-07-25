@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+    <h1><center>regex</center></h1>
+</head>
+<body>
+	<script src="jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var regex = /some/;       //returns the first found otherwise returns null.
+            var str= "There is some more some text.";
+            alert(str.match(regex));
+
+            var regex2 = /TEXT/i;     //i for non case sensitive search retrns only first.
+            var str2 = "This Text is some text!";
+            alert(str2.match(regex2));
+
+            var regex3 = /t/g;       //g is for case sensitive returns all which are matched.
+            var str3= "There is some more text.";
+            alert(str3.match(regex3));
+
+            var regex4 = /t/ig;       //ig is for both non case sensitive and returns all which are matched.
+            var str4= "There is some more text.";
+            alert(str4.match(regex4));
+        });
+
+    </script>
+</body>
+</html>

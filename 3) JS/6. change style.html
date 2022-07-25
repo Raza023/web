@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Changing style</title>
+    </head>
+    <body>
+        <h1>Changing style</h1>
+        
+        <p id="text">This is a text.</p>
+        <button id="btn">Change color</button>
+
+        <p id="text2">This is a text.</p>
+        <button id="btn2">Change fontSize</button>
+        <br/>
+
+        <!--<p id="text3"  style="display:none;">This is a text.</p>-->
+		<p id="text3">This is a text.</p>
+        <button id="btn3">change display</button>
+
+        <script type="text/javascript">
+            document.getElementById("btn").onclick=function()
+            {
+                document.getElementById("text").style.color="red";
+            }
+            document.getElementById("btn2").onclick=function()
+            {
+                document.getElementById("text2").style.fontSize="50px";
+            }
+            document.getElementById("btn3").onclick=function()
+            {
+				if(document.getElementById("text3").style.display=="none")
+				{
+					document.getElementById("text3").style.display="block";  //appear
+				}
+                else if(document.getElementById("text3").style.display=="block")
+				{
+					document.getElementById("text3").style.display="none";   //disappear
+				}
+				else
+				{
+					document.getElementById("text3").style.display="none";   //disappear
+				}
+            }
+        </script>
+        
+    </body>
+</html>

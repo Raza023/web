@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Styling Links</title>
+		<!-- Pseudo classes.-->
+        <!-- a or a:link to difine unvisited. -->
+        <!-- a:hover when we hower. -->
+        <!-- a:visited when we have visited. -->
+        <!-- a:active when we click on link. -->
+        <style type="text/css">
+            a{
+                background-color: lime;
+                text-decoration: none;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+            }
+            a:hover{
+                background-color: yellow;
+                text-decoration: underline;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+                color: red;
+            }
+            a:visited{
+                background-color: pink;
+                text-decoration: none;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+                color: brown;
+            }
+            a:active{
+                background-color: yellow;
+                text-decoration: none;
+                border: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: red;
+                color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <p><a target="_blank" href="https://www.google.com">Goolge</a></p>
+        <br>
+        <p><a target="_blank" href="http://razacricket.unaux.com">Raza Cricket</a></p>
+    </body>
+</html>

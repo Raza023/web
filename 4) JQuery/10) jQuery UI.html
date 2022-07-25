@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery UI</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <style>
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JQuery UI</h1>
+    <h2>go to <a href="https://jqueryui.com" target="_blank">jqueryui.com</a> to get latest stable version.</h2>
+    <h3>Included jquery-ui.css and jquery-ui.js in this file.</h3>
+
+    <h1 id="drag" >drag me</h1>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#drag').draggable();
+        });
+    </script>
+</body>
+
+</html>

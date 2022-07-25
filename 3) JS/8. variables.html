@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+<body>
+    <h1>Variables</h1>
+    
+    <input id="inp" type="text">
+    <button id="btn">Change text</button>
+    <p id="text">This is some text.</p>
+	
+    <input id="inp2" type="text">
+    <button id="btn2">Write text</button>
+    <p id="text2"></p>
+    
+    <script type="text/javascript">
+        document.getElementById("btn").onclick = function()
+        {
+            let getInput = document.getElementById("inp").value;
+            document.getElementById("text").innerHTML = getInput;
+        }
+        document.getElementById("btn2").onclick = function()
+        {
+            let getInput = document.getElementById("inp2").value;
+            document.getElementById("text2").innerHTML = getInput;
+        }
+    </script>
+</body>
+</html>

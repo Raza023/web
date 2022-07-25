@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Manipulating Styles</title>
+    </head>
+    <body>
+        <h1>Manipulating Styles:</h1>
+        
+        <p id="text">This is some text.</p>
+        <button id="myButton">Change Color</button>
+        
+        <p id="text2">This is some text.</p>
+        <button id="button2">Change size</button>
+        
+        <p id="text3">This is some text.</p>
+        <button id="button3">Disappear text</button>
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function()
+            {
+                document.getElementById("text").style.color = "red";
+            }
+            document.getElementById("button2").onclick = function()
+            {
+                document.getElementById("text2").style.fontSize = "50px";
+            }
+            document.getElementById("button3").onclick = function()
+            {
+                document.getElementById("text3").style.display = "none";
+            }
+        </script>
+    </body>
+</html>

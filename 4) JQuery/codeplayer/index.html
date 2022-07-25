@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="icon" href="../images/star.png" type="image/png"/>
+    <title>CodePlayer using jQuery</title>
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo">
+            CodePlayer
+        </div>
+        <div id="btnCon">
+            <div class="togglebtn active" id="html">HTML</div>
+            <div class="togglebtn" id="css">CSS</div>
+            <div class="togglebtn" id="js">JS</div>
+            <div class="togglebtn active" id="output">OUTPUT</div>
+        </div>
+    </div>
+    <span style="margin: 0; padding: 0;" id="clearFloat"></span>
+    <div id="codeCon">
+        <textarea class="panel" id="htmlarea"><p id="para">This is some text.</p></textarea>
+        <textarea class="panel hidden" id="cssarea">p{color: green;background-color: yellow;width:max-content;}</textarea>
+        <textarea class="panel hidden" id="jsarea">document.getElementById("para").innerHTML = "This text is changed using JavaScipt";</textarea>
+        <iframe class="panel" id="outputarea"></iframe>
+    </div>
+
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="../jquery-ui/jquery-ui.js"></script>
+    <script src="scripting.js"></script>
+</body>
+</html>

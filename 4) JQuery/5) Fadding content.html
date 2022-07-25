@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/jquery.png" type="image/png" />
+
+	<script type="text/javascript" src="jquery/jquery.min.js">//jquery added</script>
+
+	<style type="text/css">
+		.txt {
+			color: darkgreen;
+		}
+
+		.txt2 {
+			color: darkgreen;
+		}
+
+		.btn {
+			border-radius: 10px;
+		}
+
+		.btn2 {
+			border-radius: 10px;
+		}
+
+		.btn3 {
+			border-radius: 10px;
+		}
+	</style>
+
+	<title>Fadding content</title>
+</head>
+
+<body style="background-color: #e3e6e3">
+
+	<h1 style="background-color: orangered; width: 270px;">click on it to hide it</h1>
+	<h1 style="background-color: orangered; width: 270px;">click on it to hide it</h1>
+
+	<h2 class="txt">This is some text.</h2>
+	<p><button class="btn">Hide text</button>
+		<button class="btn2">show text</button>
+	</p>
+
+	<h3 class="txt2">This is text.</h3>
+	<p><button class="btn3">Toggle text</button></p>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			$("h1").click(function () {
+				$(this).fadeOut("slow");
+			});
+
+			$(".btn").click(function () {
+				$(".txt").fadeOut("slow", function () {
+					alert("Fadeout has been completed.");
+				});
+			});
+
+			$(".btn2").click(function () {
+				$(".txt").fadeIn("slow", function () {
+					alert("Fadein has been completed.");
+				});
+			});
+
+			$(".btn3").click(function () {
+				if ($(".txt2").css("display") == "none") {
+					$(".txt2").fadeIn("slow", function () {
+						alert("Fadein has been completed.");
+					});
+				}
+				else {
+					$(".txt2").fadeOut("slow", function () {
+						alert("FadeOut has been completed.");
+					});
+				}
+			});
+		});
+
+
+
+	</script>
+
+</body>
+
+</html>

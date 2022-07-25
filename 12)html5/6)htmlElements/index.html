@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Elements</title>
+    <script>document.createElement("box"); //this is new element now we can use.</script>
+    <style>
+        article{
+            color: rgb(45, 110, 7);
+        }
+        header,footer,article,section,nav,menu{
+            display: block;            /*did it because in internet-explorer they have display: inline;*/
+        }
+        #edit{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        this is an article!
+    </article>
+    <box>
+        This is a box.
+    </box>
+
+    <div id="edit" contenteditable="true">
+        edit this text.
+    </div>
+
+    <input type="range" name="range" id="range" min="0" max="100" step="10" value="20">
+
+    <figure>
+        <img data-descrition="sun" id="sun" src="sunset.jpg" alt="Beautiful sunset">
+        <figcaption>
+            <p>Beautiful sunset <strong>(caption)</strong></p>
+        </figcaption>
+    </figure>
+
+    <script>
+        //alert(document.getElementById("sun").getAttribute("data-descrition"));
+    </script>
+</body>
+</html>

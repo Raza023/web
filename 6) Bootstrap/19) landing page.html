@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="icons/js/b9dafe9401.js"></script>
+    <title>Landing page</title>
+    <style>
+        .jumbotron{
+            color: black;
+            text-align: center !important;
+            background-image: url("images/bg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        .put{
+            padding-left: 410px;
+        }
+        @media (max-width: 1310px) {
+            .put{
+                padding-left: 350px;
+            }
+        }
+        @media (max-width: 1115px) {
+            .put{
+                padding-left: 300px;
+            }
+        }
+        @media (max-width: 1018px) {
+            .put{
+                padding-left: 250px;
+            }
+        }
+        @media (max-width: 991px) {
+            .put{
+                padding-left: 0px;
+            }
+        }
+
+        #appstore{
+            width: 200px;
+        }
+
+        #footer{
+            margin-top: 50px;
+            text-align: center;
+            background-color: aqua;
+            padding-top: 170px;
+            padding-bottom: 170px;
+        }
+        #home{
+            margin-top: 58px;
+            padding-top: 150px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 150px;
+        }
+        .active{
+            border-radius: 10px;
+            border: 1px solid gold;
+            background-color: aqua;
+        }
+        @media (max-width: 991px) {
+            .active{
+                border: 1px solid gold;
+                background-color: aqua;
+                padding-left: 3px;
+                padding-right: 3px;
+                width: max-content;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+    <nav id="navbar-example2" class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home">MyApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Download the app</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="email" placeholder="email" aria-label="Search">
+                    <input class="form-control me-2" type="password" placeholder="password" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="home" class="jumbotron">
+        <h1 class="display-3"><b>My Awesome App!</b></h1>
+        <p class="lead"><b>This is why YOU should download this fantastic app!</b></p>
+        <hr class="m-y-2">
+
+        <p>Want to know more? Join our mailing list!</p>
+        <form class="row  g-3 put">
+            <div class="col-lg-5">
+              <label class="visually-hidden" for="email">Email</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="email" placeholder="Your email">
+              </div>
+            </div>
+
+            <div class="col-lg-1">
+              <button type="submit" class="btn btn-primary">Signup</button>
+            </div>
+          </form>
+    </div>
+
+    <div id="about" class="container">
+        <div class="row">
+            <h1 class="display-5 mt-3" style="text-align: center;"><b>Why This App Is Awesome</b></h1>
+            <p class="lead" style="text-align: center;"><b>Summary, once again, of your app's awesomeness</b></p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col-lg-4 mt-3">
+                <div class="card card-block">
+                    <img class="card-img-top"
+                        src="images/fatherandson.jpg"
+                        alt="Card image cap">
+                    <div class="card-block p-3">
+                        <h4 class="card-title"><i class="fa-solid fa-anchor"></i> Card title</h4>
+                        <p class="card-text" style="text-align:justify;">Some quick example text to build on the card title and make up the bulk of
+                            the card's content. Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-3">
+                <div class="card card-block">
+                    <img class="card-img-top"
+                        src="images/fatherandson.jpg"
+                        alt="Card image cap">
+                    <div class="card-block p-3">
+                        <h4 class="card-title"><i class="fa-solid fa-bicycle"></i> Card title</h4>
+                        <p class="card-text" style="text-align:justify;">Some quick example text to build on the card title and make up the bulk of
+                            the card's content. Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-3">
+                <div class="card card-block">
+                    <img class="card-img-top"
+                        src="images/fatherandson.jpg"
+                        alt="Card image cap">
+                    <div class="card-block p-3">
+                        <h4 class="card-title"><i class="fa-solid fa-cake-candles"></i> Card title</h4>
+                        <p class="card-text" style="text-align:justify;">Some quick example text to build on the card title and make up the bulk of
+                            the card's content. Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid" id="footer">
+        <div class="row">
+            <h2>Download the app!</h2>
+            <h4>Really, why should I download this app??</h4>
+            <p><a href="#home"><img id="appstore" src="images/appstore.png" alt="image not found"></a></p>
+        </div>
+    </div>
+
+
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

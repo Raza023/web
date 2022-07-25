@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/jquery.png" type="image/png" />
+
+	<script type="text/javascript" src="jquery/jquery.min.js">//jquery added</script>
+
+	<style type="text/css">
+		#circle {
+			border-radius: 50%;
+			background-color: red;
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+
+	<title>Animating content</title>
+</head>
+
+<body style="background-color: #e3e6e3">
+
+	<div id="circle">
+
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			$("#circle").click(function () {
+
+				$("#circle").animate({ width: "500px", height: "500px", margin: "20px", padding: "20px" }, 2000, function () {
+
+					$("#circle").css("background-color", "green");
+					$("#circle").css("border-width", "30px");
+					$("#circle").css("border-style", "solid");
+					$("#circle").css("border-color", "black");
+
+				});
+
+			});
+		});
+
+	</script>
+
+</body>
+
+</html>

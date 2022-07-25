@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disapper circle</title>
+    <style type="text/css">
+        .circle{
+            width:120px;
+            height:120px;
+            float: left;
+            border-radius: 50%;
+            margin-right: 50px;
+			position: relative;
+			left: 50px;
+			top: 50px;
+        }
+        #red-color{
+            background-color: red;
+        }
+        #green-color{
+            background-color: green;
+        }
+        #blue-color{
+            background-color: blue;
+        }
+        #yellow-color{
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Disapper circle</h1>
+    <div class="circle" id="red-color"></div>
+    <div class="circle" id="blue-color"></div>
+	<div class="circle" id="green-color"></div>
+    <div class="circle" id="yellow-color"></div>
+    <script type="text/javascript">
+        console.log("yeah");
+        document.getElementById("red-color").onclick = function()
+        {
+            document.getElementById("red-color").style.display = "none";
+        }
+        document.getElementById("green-color").onclick = function()
+        {
+            document.getElementById("green-color").style.display = "none";
+        }
+        document.getElementById("blue-color").onclick = function()
+        {
+            document.getElementById("blue-color").style.display = "none";
+        }
+        document.getElementById("yellow-color").onclick = function()
+        {
+            document.getElementById("yellow-color").style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-name="Hassan"
+        data-bs-target="#exampleModal">
+        Button for Hassan
+    </button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-name="Hussain"
+        data-bs-target="#exampleModal">
+        Button for Hussain
+    </button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-name="Ali" data-bs-target="#exampleModal">
+        Button for Ali
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>some content</h1>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        const myModal = document.getElementById('exampleModal')
+        myModal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget;
+            // Extract info from data-bs-* attributes
+            const recipient = button.getAttribute('data-name');
+            // If necessary, you could initiate an AJAX request here
+            // and then do the updating in a callback.
+
+            //-------------------- Update the modal's content---------------------------//
+            const modalTitle = myModal.querySelector('.modal-title');
+            //const modalBodyInput = myModal.querySelector('.modal-body input');
+
+            modalTitle.textContent = `New message to ${recipient}`;
+            //modalBodyInput.value = recipient;
+        });
+
+        myModal.addEventListener('hidden.bs.modal', event => {
+            alert("Modal closed");
+        });
+
+
+        //------------------jQuery code------------------------------//
+        // $('#exampleModal').on('show.bs.modal', function (event) {
+        //     var button = $(event.relatedTarget);
+        //     var recipient = button.data('name');
+        //     var modal = $(this);
+        //     modal.find('.modal-title').text('New message to ' + recipient);
+        // });
+
+        // $("#exampleModal").on("hidden.bs.modal", function (event) {
+        //     alert("Modal closed!");
+        // });
+    </script>
+</body>
+
+</html>

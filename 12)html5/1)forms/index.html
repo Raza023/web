@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Forms</h1>
+    <form id="myForm" action="processForm.php">
+        <p>Placeholder: <input type="text" name="uname" id="uname" placeholder="enter username"></p>
+        <p>Autofocus: <input type="text" name="autofocus" id="af" autofocus="autofocus" placeholder="autofocus"></p>
+        <!-- <p><input type="text" name="autofocus" id="af" autofocus></p> same as above.-->
+        <p>Autocomplete off: <input type="text" name="autocomplete" autocomplete="off" placeholder="autocomplete off"></p>
+        <p>Required: <input type="text" name="require" id="require" required placeholder="required"></p>
+        <p>EmailL: <input type="email" name="email" id="email" placeholder="email" required></p>
+        <!-- follow this link to get more out of HTML 5 patterns: https://www.html5pattern.com/ -->
+        <p>Pattern (0-9): <input type="text"  pattern="[0-9]" placeholder="0 to 9"></p>
+
+        <datalist id="names">
+            <select>
+                <option value="Hassan">Hassan</option>
+                <option value="Hussain">Hussain</option>
+                <option value="Ali">Ali</option>
+                <option value="Jawad">Jawad</option>
+                <option value="Abbas">Abbas</option>
+                <option value="Kamran">Kamran</option>
+                <option value="Huzaifa">Huzaifa</option>
+                <option value="Husnain">Husnain</option>
+                <option value="Hasnain">Hasnain</option>
+                <option value="Sqalain">Sqalain</option>
+                <option value="Safdar">Safdar</option>
+                <option value="Bisharat">Bisharat</option>
+                <option value="Raju">Raju</option>
+                <option value="Bilal">Bilal</option>
+                <option value="Shariq">Shariq</option>
+                <option value="Shahzaib">Shahzaib</option>
+                <option value="Shahrukh">Shahrukh</option>
+                <option value="Salman">Salman</option>
+                <option value="Amir">Amir</option>
+                <option value="Babar">Babar</option>
+                <option value="Shadab">Shadab</option>
+                <option value="Haris">Haris</option>
+                <option value="Rauf">Rauf</option>
+                <option value="Mushtaq">Mushtaq</option>
+                <option value="Rizwan">Rizwan</option>
+                <option value="Fawad">Fawad</option>
+                <option value="Azhar">Azhar</option>
+                <option value="Fakhar">Fakhar</option>
+                <option value="Hafeez">Hafeez</option>
+            </select>
+        </datalist>
+        <p>Datalist: <input type="text" name="dl" id="dl" list="names"></p>
+
+        <p><input type="file" name="upload" id="upload" multiple required></p>
+
+        <p><input type="submit" name="submit" id="submit" value="Submit" formaction="https://www.google.com/"></p>
+    </form>
+
+    <p>Outside the form: <input form="myForm" type="text" name="outside" placeholder="required" required></p>
+
+</body>
+</html>

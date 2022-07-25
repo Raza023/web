@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Responding a click</title>
+    </head>
+    <body>
+        <h1>Getting alert:</h1>
+        <button id="myButton">Alert!</button>
+        <h1>Changing text:</h1>
+        <p id="text">Hello World.</p>
+        <button id="secondButton">Change text</button>
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function()
+            {
+                alert("Button has been pressed.");
+            }
+            document.getElementById("secondButton").onclick = function()
+            {
+                document.getElementById("text").innerHTML = "Text has been changed.";
+            }
+        </script>
+    </body>
+</html>

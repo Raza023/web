@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+    	<title>Styling text</title>
+        
+        <!-- font-weight: bold -->
+        <!-- font-style: italic -->
+        <!-- font-size: 200% -->
+        
+        <!-- text-decoration: underline, none, overline, linethrough -->
+        <!-- text-transform: uppercase, lowercase, capitalize -->
+        <!-- text-indent: 50px paragraph's first line indentation -->
+        <!-- text-align: justify, center,left,right -->
+        
+        <!-- background-color: yellow; -->
+        <!-- color: green -->
+        
+        <!-- letter-spacing: 3px between chars. -->
+        <!-- word-spacing: 10px between words. -->
+        <!-- line-height: 0.8 between lines. -->
+        
+        <!-- direction: rt1 -->                            <!--text goes from right to left-->
+		<!-- example:                                      I am Hassan.
+		
+		becomes
+		
+		I am Hassan-->
+        
+		 
+        <!-- text-shadow: 2px 2px; -->                 <!--left top-->
+        <!-- text-shadow: -2px 2px red; -->             <!--left top color-->
+		<!-- text-shadow: 2px -2px 5px; -->             <!--left top spread -->
+        <!-- text-shadow: -2px 2px 5px red; -->         <!--left top spread color-->
+        
+        <style type="text/css">
+            .bold{
+                font-weight: bold;
+            }
+            .italic{
+				direction: ltr;
+                font-style: italic;
+            }
+            .underline{
+                text-decoration: underline;
+            }
+            .indent{
+                text-indent: 50px;
+            }
+            a{
+                font-weight: bold;
+                text-decoration: none;
+                color: blue;
+            }
+            a:hover{
+                text-decoration: underline;
+                color: red;
+            }
+            .center{
+                text-align: center;
+            }
+            .left{
+                text-align: left;
+            }
+            .right{
+                text-align: right;
+            }
+            .big{
+                font-size: 200%;
+				text-shadow: 0px 0px 5px yellow, 0px -5px 5px red;
+            }
+			.big:hover{
+                font-size: 200%;
+				width: 38%;
+				box-shadow: 5px 5px 5px black;
+            }
+		</style>
+    </head>
+    <body>
+        <h1 class="left">Left Heading</h1>
+        <h1 class="center">Center Heading</h1>
+        <h1 class="right">Right Heading</h1>
+        <p class="bold">Here is some bold text.</p>
+        <p class="italic indent">Here is some italic indented text. <span class="bold">And this syntax is bold and italic because it's also present in p tag.</span></p>
+        <p class="underline">Here is some underlined text.</p>
+        <a target="_blank" href="http://www.google.com/">Google</a>
+        <p class="big">Hover on to this to see shadow effects.</p>
+    </body>
+</html>

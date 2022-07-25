@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>WHILE LOOP</title>
+	</head>
+	<body>
+		<h1>WHILE LOOP</h1>
+		<div id="dtag"></div>
+		<div>
+			<p>How many fingers are you holding up?</p>
+			<p><input id="inp" type="text"></p>
+			<p><button id="btn">Check</button></p>
+		</div>
+		<script>
+			let arr = new Array();
+			arr[0]="1";
+			arr[1]="2";
+			arr[2]="3";
+			arr[3]="4";
+			arr[4]="5";
+			
+			let str = "";
+			
+			let i = 0; 
+			while(i < arr.length)
+			{
+				console.log(arr[i]);
+				let val = arr[i];
+				str = str+"<p>"+val+"</p>";
+				i++;
+			}
+			document.getElementById("dtag").innerHTML = str;
+			
+			
+			
+			document.getElementById("btn").onclick = function()
+			{
+				let counter=0;
+				let flag=true;
+				let inpVal = document.getElementById("inp").value;
+				let intinp = parseInt(inpVal);    //converted to int.
+				//console.log(typeof intinp);
+				
+				if(intinp<=5&&intinp>=1)
+				{
+					//alert(typeof intinp);
+					while(flag)
+					{
+						let max=5;
+						let min=1;
+						let rand = Math.floor(Math.random() * (max - min + 1)) + min;
+						if(intinp===rand)
+						{
+							counter++;
+							flag=false;
+							alert("Computer took "+counter+" guesses to guess "+intinp+".");
+						}
+						else
+						{
+							counter++;
+							if(counter==1)
+							{
+								alert("Coputer got it wrong on "+counter+"st attempt. It was not "+rand+".");
+							}
+							else if(counter==2)
+							{
+								alert("Coputer got it wrong on "+counter+"nd attempt. It was not "+rand+".");
+							}
+							else if(counter==3)
+							{
+								alert("Coputer got it wrong on "+counter+"rd attempt. It was not "+rand+".");
+							}
+							else
+							{
+								alert("Coputer got it wrong on "+counter+"th attempt. It was not "+rand+".");
+							}
+						}
+					}
+				}
+				else
+				{
+					alert("Please enter correct number of fingers.");
+				}
+			}
+		</script>
+	</body>
+</html>

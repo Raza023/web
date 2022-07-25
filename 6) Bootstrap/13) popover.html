@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popover</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title"
+        data-bs-content="And here's some amazing content. It's very engaging. Right?" data-bs-placement="bottom">Click
+        to toggle popover</button>
+
+    <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title"
+        data-bs-content="And here's some amazing content. It's very engaging. Right?" data-bs-placement="bottom">Click
+        to toggle popover</button>
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
+        // $('[data-toggle="popover"]').popover();   //only available in bootstrap 4.
+    </script>
+</body>
+
+</html>

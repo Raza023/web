@@ -7,6 +7,8 @@ https://github.com/paypal/PayPal-PHP-SDK/releases/download/1.13.0/PayPal-PHP-SDK
 download source code from here:
 https://github.com/CodeAT21/How-to-Integrate-PayPal-REST-API-Payment-Gateway-in-PHP 
 
+Watch paypal integration live here: https://jscode.unaux.com/code/12)paypal-payment-gateway/
+
 Step 1)
 Go to: https://developer.paypal.com/  (sign up)
 >create app

@@ -1,0 +1,32 @@
+Visit this site for more details: https://codeat21.com/how-to-integrate-paypal-payment-gateway-in-php/
+or watch: https://www.youtube.com/watch?v=i7feutTHuRw
+
+download paypal rest php sdk from the link given below:
+https://github.com/paypal/PayPal-PHP-SDK/releases/download/1.13.0/PayPal-PHP-SDK-1.13.0.zip
+
+download source code from here:
+https://github.com/CodeAT21/How-to-Integrate-PayPal-REST-API-Payment-Gateway-in-PHP 
+
+Step 1)
+Go to: https://developer.paypal.com/  (sign up)
+>create app
+
+Step 2)
+----------------------------------API credentials----------------------------
+Give App Name
+myApp
+
+Step 3)
+Get your client_id and client_secret
+
+Step 4)
+Go to accounts and get yor business accouunt
+and your personal account for testing purposes.
+
+Step 5)
+Edit your Database credentials in db_connection.php
+Edit your Database and paypal credentials in config.php
+
+Step 6)
+And congratulaitions your payment method is integrated.
+Enjoy the show :)

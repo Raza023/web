@@ -39,32 +39,50 @@ console.log(obj.myObj.subjects[2].java);
 
 
 
-
-
-
 // Following code will work only on http or https url just for protection to use .json file.
 // go and see it here  (http://jscode.unaux.com/code/5)JSON/read.html)
 
-// const json_url = "../first.json";
-// async function getJSON() {
-//     const response = await fetch(json_url);
-//     const obj = await response.json();     //it's already in js object form no need to parse it.
 
-//     console.log(obj);
+//-----------------following code can be used to get data from .json file-------------------
+//const json_url = "first.json";
+//async function getJSON()
+//{
+//    const response = await fetch(json_url);
+//    const obj = await response.json();
+//    console.log("It's an "+typeof obj);            //it's already in js object form so no need to parse.
+// 
+//    //let obj = JSON.parse(data);      //JSON -> JS OBJECT
+//
+//    console.log(obj); 
+//
+//    console.log(obj.name);
+//    //console.log(obj["name"]);   //same as above.
+//
+//    console.log(obj.shopItems[2]);
+//    //console.log(obj["shopItems"][2]);   //same as above.
+//
+//    console.log(obj.myObj.CGPA);
+//    //console.log(obj["myObj"]["CGPA"]);   //same as above.
+//
+//    console.log(obj.myObj.subjects[2].java);
+//    //console.log(obj["myObj"]["subjects"][2]["java"]);  //same as above.
+//} 
 
-//     console.log(obj.name);
-//     //console.log(obj["name"]);   //same as above.
+//getJSON().catch(error=>{             //calling and error handling.
+//    console.log("error is :");
+//    console.error(error);
+//});
 
-//     console.log(obj.shopItems[2]);
-//     //console.log(obj["shopItems"][2]);   //same as above.
 
-//     console.log(obj.myObj.CGPA);
-//     //console.log(obj["myObj"]["CGPA"]);   //same as above.
+// following code can be used to get data as well.
 
-//     console.log(obj.myObj.subjects[2].java);
-//     //console.log(obj["myObj"]["subjects"][2]["java"]);  //same as above.
-// }
-
-// getJSON();
+// fetch("first.json")
+// .then(response => response.json())
+// .then(data=>{
+//     console.log(data);
+// }).catch(error=>{            // error handling.
+//     console.log("error is :");
+//     console.error(error);
+// });
     
 
